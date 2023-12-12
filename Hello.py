@@ -20,32 +20,31 @@ LOGGER = get_logger(__name__)
 
 def run():
     st.set_page_config(
-        page_title="Hello",
+        page_title="Welcome to Largest Number calculator",
         page_icon="👋",
     )
+    st.write("""
+    # Graded Assignment 8
+    This app finds the largest of the 3 given numbers
+    """)
 
-    st.write("# Welcome to Streamlit! 👋")
-
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
-
+    #Get Input
+    st.header('User Input Parameters')
+    
+    first_number = st.number_input("First Number:")
+    second_number = st.number_input("Second Number:")
+    third_number = st.number_input("Third Number:")
+    
+    largest_number=0
+    if first_number > largest_number:
+      largest_number=first_number
+    if second_number > largest_number:
+      largest_number=second_number
+    if third_number > largest_number:
+      largest_number=third_number
+    
+    st.subheader('Largest Number')
+    st.write(largest_number)
 
 if __name__ == "__main__":
     run()
